@@ -19,6 +19,25 @@
           </div>  
         </aside>
         <button type="button" id="add-todo">Add Todo +</button>
+
+        <dialog id="project-modal">
+          <form action="">
+            <label for="project-name"> <input type="text" id="project-name" name="project-name" required></label>
+          </form>
+          <button type="button" id="add-project-modal-btn"></button>
+          <button type="button" id="close-modal">Close</button>
+        </dialog>
+        <form action="" id="todo-form">
+          <label for="todo-title"><input type="text" id="todo-title" name="todo-title" title="todo-title" required></label>
+          <label for="todo-description"><input type="text" id="todo-description" name="todo-description" title="todo-description"></label>
+          <label for="todo-due-date"><input type="date" id="todo-due-date" name="todo-due-date" title="todo-due-date" required></label>
+          <select name="priority-select" id="priority-select" title="priority-select">
+            <option value="priority-level" disabled >Priority Level</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </form>
     </div>
 </body>
 </html>
