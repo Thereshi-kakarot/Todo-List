@@ -99,8 +99,7 @@ nav button:hover{
     padding: 20px;
     border-radius: 10px;
     gap: 10px;
-    display: flex;
-    flex-direction: column;
+    display: none;
     min-height: 50vh;
     width: 30vw;
     align-items: center;
@@ -146,4 +145,54 @@ nav button:hover{
     margin: 20px;
     height: 75px;
     width: 200px;
+}
+
+#project-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+    display: none;
+    align-items: center;
+    min-height: 30vh;
+    width: 30vw;
+    align-items: center;
+}
+#project-modal input{
+    padding: 20px 15px;
+    border: 1px solid #ccc;
+    width: 350px;
+}
+#project-modal .modal-btns{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#project-modal #add-project-modal-btn{
+    background-color: #ccc;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border: none;
+    margin: 20px;
+    height: 45px;
+    width: 150px;
+}
+#project-modal #add-project-modal-btn:hover{
+    background-color: #07dabd;
+    color: #fff;
+}
+#project-modal #close-project-modal-btn{
+    background-color: red;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border: none;
+    margin: 20px;
+    height: 45px;
+    width: 150px;
 }
