@@ -28,8 +28,8 @@
           <button type="button" id="close-modal">Close</button>
         </dialog>
         <form action="" id="todo-form">
-          <label for="todo-title"><input type="text" id="todo-title" name="todo-title" title="todo-title" required></label>
-          <label for="todo-description"><input type="text" id="todo-description" name="todo-description" title="todo-description"></label>
+          <label for="todo-title"><input type="text" id="todo-title" name="todo-title" title="todo-title" placeholder="Title" required></label>
+          <label for="todo-description"><input type="text" id="todo-description" name="todo-description" title="todo-description" placeholder="Description"></label>
           <label for="todo-due-date"><input type="date" id="todo-due-date" name="todo-due-date" title="todo-due-date" required></label>
           <select name="priority-select" id="priority-select" title="priority-select">
             <option value="priority-level" disabled >Priority Level</option>
@@ -37,7 +37,12 @@
             <option value="medium">Medium</option>
             <option value="high">High</option>
           </select>
+          <div id="form-btns">
+            <button type="button" id="submit-todo">Submit Todo</button>
+        <button type="button" id="close-todo-form">Close</button>
+          </div>
         </form>
+        
     </div>
 </body>
 </html>

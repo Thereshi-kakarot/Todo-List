@@ -52,17 +52,17 @@ nav button:hover{
     border-right: 1px solid #fff;
 }
 #container aside #project{
-    background-color: pink;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: #07dabd;
     font-size: 20px;
     padding: 10px 20px;
 }
 #container aside #project:hover{
-    background-color: #fff;
-    color: pink;
+    background-color: #07dabd;
+    color: #fff;
 }
 #container aside #project button{
     background-color: red;
@@ -89,5 +89,57 @@ nav button:hover{
     color: #07dabd;
 }
 
+/* todo form */
+#todo-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 30vw;
+}
 
-
+#todo-form input{
+    padding: 20px 15px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 10px auto;
+}
+#todo-form select{
+    padding: 20px 15px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 10px auto;
+}
+#todo-form #form-btns{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#todo-form #form-btns #submit-todo{
+    background-color: #07dabd;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border: none;
+    margin: 20px;
+}
+#todo-form #form-btns #submit-todo:hover{
+    background-color: #fff;
+    color: #07dabd;
+}
+#todo-form #form-btns #close-todo-form{
+    background-color: red;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border: none;
+    margin: 20px;
+}
