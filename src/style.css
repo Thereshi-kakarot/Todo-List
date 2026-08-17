@@ -101,20 +101,20 @@ nav button:hover{
     gap: 10px;
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    min-height: 50vh;
     width: 30vw;
+    align-items: center;
 }
 
 #todo-form input{
     padding: 20px 15px;
     border: 1px solid #ccc;
-    width: 80%;
-    margin: 10px auto;
+    width: 350px;
 }
 #todo-form select{
     padding: 20px 15px;
     border: 1px solid #ccc;
-    width: 80%;
+    width: 350px;
     margin: 10px auto;
 }
 #todo-form #form-btns{
@@ -130,6 +130,8 @@ nav button:hover{
     padding: 15px 20px;
     border: none;
     margin: 20px;
+    height: 75px;
+    width: 200px;
 }
 #todo-form #form-btns #submit-todo:hover{
     background-color: #fff;
@@ -142,4 +144,6 @@ nav button:hover{
     padding: 15px 20px;
     border: none;
     margin: 20px;
+    height: 75px;
+    width: 200px;
 }
