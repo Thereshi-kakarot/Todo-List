@@ -12,17 +12,19 @@
    </nav>
     <div id="container">
 
-        <aside>
-          <div id="project">
+        <aside id="aside-container">
+          <div class="project-wrapper">
+            <div id="project">
             <h3 id="project-name">Default Project</h3>
-            <button type="button" id="del-project">X</button>
           </div>  
+          <button type="button" id="del-project">X</button>
+          </div>
         </aside>
         <button type="button" id="add-todo">Add Todo +</button>
 
         <dialog id="project-modal">
           <form action="">
-            <label for="project-name"> <input type="text" id="project-name" name="project-name" required></label>
+            <label for="project-title"> <input type="text" id="project-title" name="project-title" required></label>
           </form>
           <div class="modal-btns">
             <button type="button" id="add-project-modal-btn">Add Project</button>

@@ -179,8 +179,9 @@ nav button:hover{
     padding: 15px 20px;
     border: none;
     margin: 20px;
-    height: 45px;
+    min-height: 45px;
     width: 150px;
+    text-align: center;
 }
 #project-modal #add-project-modal-btn:hover{
     background-color: #07dabd;
@@ -193,6 +194,7 @@ nav button:hover{
     padding: 15px 20px;
     border: none;
     margin: 20px;
-    height: 45px;
+    min-height: 45px;
     width: 150px;
+    text-align: center;
 }
