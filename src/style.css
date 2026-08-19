@@ -46,30 +46,40 @@ nav button:hover{
     display: flex;
     flex-direction: column;
     padding: 20px 20px;
-    width: 20%;
+    width: 30%;
     height: 100%;
     background-color: rgb(7, 7, 44);
     border-right: 1px solid #fff;
 }
-#container aside #project{
+#container aside .project-wrapper{
+    height: 60px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+}
+#container aside .project-wrapper #project{
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #07dabd;
-    font-size: 20px;
+    font-size: 1.7rem;
+    width: 60%;
     padding: 10px 20px;
 }
-#container aside #project:hover{
+#container aside .project-wrapper #project:hover{
     background-color: #07dabd;
     color: #fff;
 }
-#container aside #project button{
+#container aside .project-wrapper button{
     background-color: red;
     color: #fff;
     border: none;
     padding: 5px 10px;
+    width: 30%;
     font-size: 20px;
+    font-size: 1.5rem;
 }
 
 #container #add-todo{
