@@ -50,6 +50,8 @@ nav button:hover{
     height: 100%;
     background-color: rgb(7, 7, 44);
     border-right: 1px solid #fff;
+    overflow: auto;
+    align-items: center;
 }
 #container aside .project-wrapper{
     height: 60px;
@@ -57,6 +59,8 @@ nav button:hover{
     background-color: transparent;
     border: none;
     display: flex;
+    margin: 10px 0;
+
 }
 #container aside .project-wrapper #project{
     background-color: #fff;

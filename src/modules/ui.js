@@ -39,7 +39,14 @@ addProjectModalBtn.addEventListener("click", ()=> {
 
     asideContainer.innerHTML = "";
     state.projects.forEach((project, index)=> {
-        
+        asideContainer.innerHTML += `
+        <div class="project-wrapper">
+        <div id="project">
+        <h3 id="project-name">${project.name}</h3>
+        </div>  
+        <button type="button" id="del-project">X</button>
+        </div>
+        `
     });
 });
 });
