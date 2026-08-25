@@ -4,9 +4,9 @@ import { state } from "./state.js";
 document.addEventListener("DOMContentLoaded", () => {
 const addProjectBtn = document.getElementById("add-project");
 const addTodoBtn = document.getElementById("add-todo");
-const delProjectBtn = document.getElementById("del-project");
+const delProjectBtn = document.querySelectorAll(".del-project");
 const container = document.getElementById("container");
-const project = document.getElementById("project");
+const project = document.querySelector(".project");
 const projectModal = document.getElementById("project-modal");
 const closeProjectModalBtn = document.getElementById("close-project-modal-btn");
 const addProjectModalBtn = document.getElementById("add-project-modal-btn");
@@ -41,15 +41,21 @@ addProjectModalBtn.addEventListener("click", ()=> {
     state.projects.forEach((project, index)=> {
         asideContainer.innerHTML += `
         <div class="project-wrapper">
-        <div id="project">
-        <h3 id="project-name">${project.name}</h3>
+        <div class="project">
+        <h3 class="project-name">${project.name}</h3>
         </div>  
-        <button type="button" id="del-project">X</button>
+        <button type="button" id="del-project" data-index="${index}">X</button>
         </div>
         `
     });
 });
+asideContainer.addEventListener("click", (e)=> {
+    if(e.target.classList.contains("del-project")){
+        const index = Number(e.target.dataset.index);
+        state.projects.splice(index, 1);
+        asideContainer.innerHTML = "";
+    }
 });
 
 
-
+})

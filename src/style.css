@@ -62,7 +62,7 @@ nav button:hover{
     margin: 10px 0;
 
 }
-#container aside .project-wrapper #project{
+#container aside .project-wrapper .project{
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -72,7 +72,7 @@ nav button:hover{
     width: 60%;
     padding: 10px 20px;
 }
-#container aside .project-wrapper #project:hover{
+#container aside .project-wrapper .project:hover{
     background-color: #07dabd;
     color: #fff;
 }
