@@ -16,6 +16,20 @@ const asideContainer = document.getElementById("aside-container");
 const todoForm = document.getElementById("todo-form")
 const closeTodoFormBtn = document.querySelector(".close-todo-form");
 
+  const renderProjects = () => {
+        
+    asideContainer.innerHTML = "";
+    state.projects.forEach((project, index)=> {
+        asideContainer.innerHTML += `
+        <div class="project-wrapper">
+        <div class="project">
+        <h3 class="project-name">${project.name}</h3>
+        </div>  
+        <button type="button" class="del-project" data-index="${index}">X</button>
+        </div>
+        `;
+    });
+    }
 
 addProjectBtn.addEventListener("click", ()=> {
     projectModal.style.display = "block";
@@ -39,34 +53,14 @@ addProjectModalBtn.addEventListener("click", ()=> {
     projectModal.style.display = "none";
     projectTitle.value = "";
 
-    asideContainer.innerHTML = "";
-    state.projects.forEach((project, index)=> {
-        asideContainer.innerHTML += `
-        <div class="project-wrapper">
-        <div class="project">
-        <h3 class="project-name">${project.name}</h3>
-        </div>  
-        <button type="button" class="del-project" data-index="${index}">X</button>
-        </div>
-        `;
-    });
+    renderProjects();
+
 });
 asideContainer.addEventListener("click", (e)=> {
     if(e.target.classList.contains("del-project")){
         const index = Number(e.target.dataset.index);
         state.projects.splice(index, 1);
-        asideContainer.innerHTML = "";
-
-        state.projects.forEach((project, index)=> {
-        asideContainer.innerHTML += `
-        <div class="project-wrapper">
-        <div class="project">
-        <h3 class="project-name">${project.name}</h3>
-        </div>  
-        <button type="button" class="del-project" data-index="${index}">X</button>
-        </div>
-        `;
-        })
+        renderProjects();
     }
 });
 
