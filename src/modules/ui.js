@@ -19,6 +19,7 @@ const todoTitle = document.getElementById("todo-title");
 const todoDescription = document.getElementById("todo-description");
 const todoDueDate = document.getElementById("todo-due-date");
 const submitTodoBtn = document.getElementById("submit-todo");
+const prioritySelect = document.getElementById("priority-select");
 
   const renderProjects = () => {
         
@@ -42,7 +43,7 @@ const submitTodoBtn = document.getElementById("submit-todo");
             return;
         }
         state.selectedProject.todos.forEach((todo, index) => {
-            container.innerHTML = `
+            container.innerHTML += `
             <div class="todo">
             <h4>${todo.title}</h4>
             <p>${todo.description}</p>
@@ -120,6 +121,15 @@ submitTodoBtn.addEventListener("click", (e)=> {
         alert("Please enter a due date");
         return;
     }
+
+    const newTodo = createTodo(
+        todoTitle.value.trim(),
+        todoDescription.value.trim(),
+        todoDueDate.value.trim(),
+        prioritySelect.value
+    );
+    state.selectedProject.addTodo(newTodo);
+    renderTodos();
 });
 
 });
