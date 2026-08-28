@@ -15,6 +15,10 @@ const projectTitle = document.querySelector("#project-title");
 const asideContainer = document.getElementById("aside-container");
 const todoForm = document.getElementById("todo-form")
 const closeTodoFormBtn = document.querySelector(".close-todo-form");
+const todoTitle = document.getElementById("todo-title");
+const todoDescription = document.getElementById("todo-description");
+const todoDueDate = document.getElementById("todo-due-date");
+const submitTodoBtn = document.getElementById("submit-todo");
 
   const renderProjects = () => {
         
@@ -29,6 +33,23 @@ const closeTodoFormBtn = document.querySelector(".close-todo-form");
         </div>
         `;
     });
+    }
+
+    const renderTodos = ()=> {
+        state.selectedProject.todos.forEach((todo, index) => {
+            container.innerHTML = `
+            <div class="todo">
+            <h4>${todo.title}</h4>
+            <p>${todo.description}</p>
+            <p>Due: ${todo.dueDate}</p>
+            <p>Priority: ${todo.priority}</p>
+            <div class="todo-buttons">
+            <button type="button" class="del-todo" data-index="${index}">Delete Todo</button>
+            <button type="button" class="edit-todo" data-index="${index}">Edit Todo</button>
+            </div>
+            </div>
+            `
+        });
     }
 
 addProjectBtn.addEventListener("click", ()=> {
@@ -54,6 +75,7 @@ addProjectModalBtn.addEventListener("click", ()=> {
     projectTitle.value = "";
 
     renderProjects();
+    renderTodos();
 
 });
 asideContainer.addEventListener("click", (e)=> {
@@ -72,6 +94,19 @@ addTodoBtn.addEventListener("click", ()=> {
 
 closeTodoFormBtn.addEventListener("click", ()=> {
     todoForm.style.display = "none";
+});
+
+submitTodoBtn.addEventListener("click", (e)=> {
+    e.preventDefault();
+
+    if(todoTitle.value.trim()=== ""){
+        alert("Please enter a todo title");
+        return;
+    }
+    if(todoDueDate.value.trim()=== ""){
+        alert("Please enter a due date");
+        return;
+    }
 });
 
 });
