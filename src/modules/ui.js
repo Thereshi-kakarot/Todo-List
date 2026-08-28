@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const addProjectBtn = document.getElementById("add-project");
 const addTodoBtn = document.querySelector(".add-todo");
 const delProjectBtn = document.querySelectorAll(".del-project");
-const container = document.getElementById("container");
+const todoList = document.getElementById("todo-list");
 const project = document.querySelector(".project");
 const projectModal = document.getElementById("project-modal");
 const closeProjectModalBtn = document.getElementById("close-project-modal-btn");
@@ -37,13 +37,13 @@ const prioritySelect = document.getElementById("priority-select");
     }
 
     const renderTodos = ()=> {
-        container.innerHTML = "";
+        todoList.innerHTML = "";
 
         if(!state.selectedProject) {
             return;
         }
         state.selectedProject.todos.forEach((todo, index) => {
-            container.innerHTML += `
+            todoList.innerHTML += `
             <div class="todo">
             <h4>${todo.title}</h4>
             <p>${todo.description}</p>
@@ -122,6 +122,10 @@ submitTodoBtn.addEventListener("click", (e)=> {
         return;
     }
 
+    if(!state.selectedProject) {
+        alert("Please select a project first");
+        return;
+    }
     const newTodo = createTodo(
         todoTitle.value.trim(),
         todoDescription.value.trim(),
