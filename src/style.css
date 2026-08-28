@@ -37,25 +37,25 @@ nav button:hover{
     color: #07dabd;
 }
 
-#container{
+#app-layout{
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 350px 1fr;
     height: 100vh;
     background-color:rgb(7, 7, 44);
 }
 
-#container aside{
+#container #app-layout aside{
     display: flex;
     flex-direction: column;
     padding: 20px 20px;
-    width: 30%;
+    width: 100%;
     height: 100%;
     background-color: rgb(7, 7, 44);
     border-right: 1px solid #fff;
     overflow: auto;
     align-items: center;
 }
-#container aside .project-wrapper{
+#container #app-layout aside .project-wrapper{
     height: 60px;
     width: 100%;
     background-color: transparent;
@@ -64,7 +64,7 @@ nav button:hover{
     margin: 10px 0;
 
 }
-#container aside .project-wrapper .project{
+#container #app-layout aside .project-wrapper .project{
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -74,11 +74,11 @@ nav button:hover{
     width: 60%;
     padding: 10px 20px;
 }
-#container aside .project-wrapper .project:hover{
+#container #app-layout aside .project-wrapper .project:hover{
     background-color: #07dabd;
     color: #fff;
 }
-#container aside .project-wrapper button{
+#container #app-layout aside .project-wrapper button{
     background-color: red;
     color: #fff;
     border: none;
@@ -88,7 +88,7 @@ nav button:hover{
     font-size: 1.5rem;
 }
 
-#container .add-todo{
+#container #app-layout .add-todo{
     background-color: #07dabd;
     color: #fff;
     font-size: 1.2rem;
@@ -100,7 +100,7 @@ nav button:hover{
     bottom: 20px;
     transition: all 0.3s ease-in-out;
 }
-#container .add-todo:hover{
+#container #app-layout .add-todo:hover{
     background-color: #fff;
     color: #07dabd;
 }

@@ -11,8 +11,8 @@
     <button type="button" id="add-project">Add Project +</button>
    </nav>
     <div id="container">
-
-        <aside id="aside-container">
+        <div id="app-layout">
+          <aside id="aside-container">
           <div class="project-wrapper">
             <div class="project">
             <h3 class="project-name">Default Project</h3>
@@ -20,9 +20,15 @@
           <button type="button" class="del-project">X</button>
           </div>
         </aside>
-        <div id="todo-list"></div>
+        <div id="todo-section">
+           <div id="todo-list"></div>
         <button type="button" class="add-todo">Add Todo +</button>
+        </div>
 
+       
+
+        </div>
+        
         <dialog id="project-modal">
           <form action="">
             <label for="project-title"> <input type="text" id="project-title" name="project-title" required></label>
