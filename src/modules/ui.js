@@ -26,7 +26,7 @@ const submitTodoBtn = document.getElementById("submit-todo");
     state.projects.forEach((project, index)=> {
         asideContainer.innerHTML += `
         <div class="project-wrapper">
-        <div class="project">
+        <div class="project" data-index="${index}">
         <h3 class="project-name">${project.name}</h3>
         </div>  
         <button type="button" class="del-project" data-index="${index}">X</button>
@@ -36,6 +36,11 @@ const submitTodoBtn = document.getElementById("submit-todo");
     }
 
     const renderTodos = ()=> {
+        container.innerHTML = "";
+
+        if(!state.selectedProject) {
+            return;
+        }
         state.selectedProject.todos.forEach((todo, index) => {
             container.innerHTML = `
             <div class="todo">
@@ -75,7 +80,6 @@ addProjectModalBtn.addEventListener("click", ()=> {
     projectTitle.value = "";
 
     renderProjects();
-    renderTodos();
 
 });
 asideContainer.addEventListener("click", (e)=> {
@@ -83,6 +87,15 @@ asideContainer.addEventListener("click", (e)=> {
         const index = Number(e.target.dataset.index);
         state.projects.splice(index, 1);
         renderProjects();
+        return;
+    }
+
+    const projectElement = e.target.closest(".project");
+
+    if(projectElement){
+        const index = Number(projectElement.dataset.index);
+        state.selectedProject = state.projects[index];
+        renderTodos();
     }
 });
 
