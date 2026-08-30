@@ -24,10 +24,13 @@ const prioritySelect = document.getElementById("priority-select");
   const renderProjects = () => {
         
     asideContainer.innerHTML = "";
+
     state.projects.forEach((project, index)=> {
+
+        const selectedClass = state.selectedProject === project ? "selected" : "";
         asideContainer.innerHTML += `
         <div class="project-wrapper">
-        <div class="project" data-index="${index}">
+        <div class="project ${selectedClass}" data-index="${index}">
         <h3 class="project-name">${project.name}</h3>
         </div>  
         <button type="button" class="del-project" data-index="${index}">X</button>
