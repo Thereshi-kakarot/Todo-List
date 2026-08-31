@@ -20,6 +20,7 @@ const todoDescription = document.getElementById("todo-description");
 const todoDueDate = document.getElementById("todo-due-date");
 const submitTodoBtn = document.getElementById("submit-todo");
 const prioritySelect = document.getElementById("priority-select");
+const projectHTitle = document.querySelector(".project-h-title");
 
   const renderProjects = () => {
         
@@ -40,11 +41,16 @@ const prioritySelect = document.getElementById("priority-select");
     }
 
     const renderTodos = ()=> {
+
         todoList.innerHTML = "";
 
         if(!state.selectedProject) {
+            projectHTitle.textContent = "";
             return;
         }
+
+        projectHTitle.textContent = state.selectedProject.name;
+
         state.selectedProject.todos.forEach((todo, index) => {
             todoList.innerHTML += `
             <div class="todo">
@@ -87,6 +93,7 @@ addProjectModalBtn.addEventListener("click", ()=> {
 
 });
 asideContainer.addEventListener("click", (e)=> {
+
     if(e.target.classList.contains("del-project")){
         const index = Number(e.target.dataset.index);
         state.projects.splice(index, 1);
@@ -99,6 +106,8 @@ asideContainer.addEventListener("click", (e)=> {
     if(projectElement){
         const index = Number(projectElement.dataset.index);
         state.selectedProject = state.projects[index];
+        projectHTitle.textContent = state.selectedProject.name;
+        renderProjects();
         renderTodos();
     }
 });

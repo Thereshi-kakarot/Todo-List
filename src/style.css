@@ -248,16 +248,18 @@ nav button:hover{
 .todo h4{
     font-size: 1.5rem;
     color: #07dabd;
-
 }
+
 .todo p{
     font-size: 1.2rem;
     color: #000;
 }
+
 .todo .todo-buttons{
     display: flex;
     gap: 10px;
 }
+
 .todo .todo-buttons .del-todo{
     background-color: red;
     color: #fff;
@@ -287,4 +289,14 @@ nav button:hover{
 .todo .todo-buttons .edit-todo:hover{
     background-color: #fff;
     color: #07dabd;
+}
+
+.project-h-title-container{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #07dabd;
+    border-bottom: 1px solid #fff;
 }
