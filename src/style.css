@@ -5,43 +5,44 @@
 }
 
 body{
-    background-color: #444;
+    background-color: #31393c;
+    padding: 20px 20px;
 }
 nav{
-    height: 95px;
-    background-color: rgb(7, 7, 44);
+    height: 100px;
+    background-color: #fff;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #31393c;
 }
 
 nav h2{
-    color: #fff;
-    font-size: 1.5rem;
+    color: #31393c;
+    font-size: 1.8rem;
 }
 
 nav button{
-    background-color: #07dabd;
-    color: #000;
-    font-size: 1.2rem;
+    background-color: #3e96f4;
     color: #fff;
+    font-size: 1.2rem;
     padding: 15px 20px;
     border: none;
+    transition: all 0.3s ease-in-out;
 }
 
 nav button:hover{
     background-color: #fff;
-    color: #07dabd;
+    color: #3e96f4;
 }
 
 #app-layout{
     display: grid;
     grid-template-columns: 350px 1fr;
     height: 100vh;
-    background-color:rgb(7, 7, 44);
+    background-color:#fff;
 }
 
 #container #app-layout aside{
@@ -50,8 +51,8 @@ nav button:hover{
     padding: 20px 20px;
     width: 100%;
     height: 100%;
-    background-color: rgb(7, 7, 44);
-    border-right: 1px solid #fff;
+    background-color: #fff;
+    border-right: 1px solid #31393c;
     overflow: auto;
     align-items: center;
 }
@@ -65,20 +66,21 @@ nav button:hover{
 
 }
 #container #app-layout aside .project-wrapper .project{
-    background-color: #fff;
+    background-color: #31393c;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #07dabd;
+    color: #fff;
     font-size: 1.7rem;
     width: 60%;
     height: 100%;
     padding: 20px 20px;
+    transition: all 0.3s ease-in-out;
     
 }
 #container #app-layout aside .project-wrapper .project:hover{
-    background-color: #07dabd;
-    color: #fff;
+    background-color: #fff;
+    color: #31393c;
 }
 #container #app-layout aside .project-wrapper button{
     background-color: red;
@@ -91,7 +93,7 @@ nav button:hover{
 }
 
 #container #app-layout .add-todo{
-    background-color: #07dabd;
+    background-color: #3e96f4;
     color: #fff;
     font-size: 1.2rem;
     padding: 15px 20px;
@@ -104,7 +106,7 @@ nav button:hover{
 }
 #container #app-layout .add-todo:hover{
     background-color: #fff;
-    color: #07dabd;
+    color: #3e96f4;
 }
 
 /* todo form */
@@ -121,18 +123,21 @@ nav button:hover{
     min-height: 50vh;
     width: 30vw;
     align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 #todo-form input{
     padding: 20px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #edeeeb;
     width: 350px;
+    font-size: 1.8rem;
 }
 #todo-form select{
     padding: 20px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #edeeeb;
     width: 350px;
     margin: 10px auto;
+    font-size: 1.8rem;
 }
 #todo-form #form-btns{
     width: 60%;
@@ -141,7 +146,7 @@ nav button:hover{
     align-items: center;
 }
 #todo-form #form-btns #submit-todo{
-    background-color: #07dabd;
+    background-color: #3e96f4;
     color: #fff;
     font-size: 1.2rem;
     padding: 15px 20px;
@@ -149,10 +154,11 @@ nav button:hover{
     margin: 20px;
     height: 75px;
     width: 200px;
+    transition: all 0.3s ease-in-out;
 }
 #todo-form #form-btns #submit-todo:hover{
     background-color: #fff;
-    color: #07dabd;
+    color: #3e96f4;
 }
 #todo-form #form-btns .close-todo-form{
     background-color: red;
@@ -178,12 +184,14 @@ nav button:hover{
     align-items: center;
     min-height: 30vh;
     width: 30vw;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     
 }
 #project-modal input{
     padding: 20px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #edeeeb;
     width: 350px;
+    font-size: 1.6rem;
 }
 #project-modal .modal-btns{
     width: 60%;
@@ -192,7 +200,8 @@ nav button:hover{
     align-items: center;
 }
 #project-modal #add-project-modal-btn{
-    background-color: #ccc;
+    background-color: #3e96f4;
+    color: #fff;
     font-size: 1.2rem;
     padding: 15px 20px;
     border: none;
@@ -202,8 +211,8 @@ nav button:hover{
     text-align: center;
 }
 #project-modal #add-project-modal-btn:hover{
-    background-color: #07dabd;
-    color: #fff;
+    background-color: #fff;
+    color: #3e96f4;
 }
 #project-modal #close-project-modal-btn{
     background-color: red;
@@ -229,15 +238,15 @@ nav button:hover{
     padding: 20px 20px;
     width: 100%;
     height: 100%;
-    background-color: rgb(7, 7, 44);
+    background-color: #fff;
     overflow: auto;
 }
 
 .todo{
     min-height: 60px;
     width: 100%;
-    background-color:#ccc;
-    border: 2px solid #07dabd;
+    background-color:#ccc7bf;
+    border: 2px solid #3e96f4;
     display: flex;
     padding: 10px 20px;
     justify-content: space-between;
@@ -246,12 +255,12 @@ nav button:hover{
 
 }
 .todo h4{
-    font-size: 1.5rem;
-    color: #07dabd;
+    font-size: 1.8rem;
+    color: #31393c;
 }
 
 .todo p{
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: #000;
 }
 
@@ -276,7 +285,7 @@ nav button:hover{
     color: red;
 }
 .todo .todo-buttons .edit-todo{
-    background-color: #07dabd;
+    background-color: #3e96f4;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -288,7 +297,7 @@ nav button:hover{
 }
 .todo .todo-buttons .edit-todo:hover{
     background-color: #fff;
-    color: #07dabd;
+    color: #3e96f4;
 }
 
 .project-h-title-container{
@@ -297,6 +306,11 @@ nav button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #07dabd;
-    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    border-bottom: 1px solid #edeeeb;
+}
+
+.project-h-title{
+    font-size: 2rem;
+    color: #31393c;
 }
