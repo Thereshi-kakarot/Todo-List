@@ -66,6 +66,25 @@ const projectHTitle = document.querySelector(".project-h-title");
             `
         });
     }
+  todoList.addEventListener("click", (e)=> {
+
+    if(e.target.classList.contains("del-todo")){
+        const index = Number(e.target.dataset.index);
+        state.selectedProject.todos.splice(index, 1);
+        renderTodos();
+        return;
+    }
+    if(e.target.classList.contains("edit-todo")){
+        const index = Number(e.target.dataset.index);
+        const todo = state.selectedProject.todos[index];
+        todoTitle.value = todo.title;
+        todoDescription.value = todo.description;
+        todoDueDate.value = todo.dueDate;
+        prioritySelect.value = todo.priority;
+        todoForm.style.display = "flex";
+        todoForm.style.flexDirection = "column";
+    }
+  });
 
 addProjectBtn.addEventListener("click", ()=> {
     projectModal.style.display = "block";
