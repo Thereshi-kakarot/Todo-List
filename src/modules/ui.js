@@ -77,6 +77,9 @@ const projectHTitle = document.querySelector(".project-h-title");
     if(e.target.classList.contains("edit-todo")){
         const index = Number(e.target.dataset.index);
         const todo = state.selectedProject.todos[index];
+
+        state.editingTodo = todo;
+
         todoTitle.value = todo.title;
         todoDescription.value = todo.description;
         todoDueDate.value = todo.dueDate;
@@ -87,7 +90,8 @@ const projectHTitle = document.querySelector(".project-h-title");
   });
 
 addProjectBtn.addEventListener("click", ()=> {
-    projectModal.style.display = "block";
+    projectModal.style.display = "flex";
+    projectModal.style.flexDirection = "column";
 });
 
 closeProjectModalBtn.addEventListener("click", ()=> {
@@ -105,8 +109,9 @@ addProjectModalBtn.addEventListener("click", ()=> {
     const newProject = createProject(projectTitle.value.trim());
     state.projects.push(newProject);
 
-    projectModal.style.display = "none";
     projectTitle.value = "";
+    projectModal.close();
+    
 
     renderProjects();
 
@@ -157,13 +162,25 @@ submitTodoBtn.addEventListener("click", (e)=> {
         alert("Please select a project first");
         return;
     }
-    const newTodo = createTodo(
+    if(state.editingTodo){
+        state.editingTodo.title = todoTitle.value.trim();
+        state.editingTodo.description = todoDescription.value.trim();
+        state.editingTodo.dueDate = todoDueDate.value.trim();
+        state.editingTodo.priority = prioritySelect.value;
+        state.editingTodo = null;
+        renderTodos();
+        return;
+    }
+    else{
+        const newTodo = createTodo(
         todoTitle.value.trim(),
         todoDescription.value.trim(),
         todoDueDate.value.trim(),
         prioritySelect.value
     );
     state.selectedProject.addTodo(newTodo);
+    }
+    todoForm.style.display = "none";
     renderTodos();
 });
 
