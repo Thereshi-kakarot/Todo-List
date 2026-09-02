@@ -110,7 +110,7 @@ addProjectModalBtn.addEventListener("click", ()=> {
     state.projects.push(newProject);
 
     projectTitle.value = "";
-    projectModal.close();
+    projectModal.style.display = "none";
     
 
     renderProjects();
@@ -182,6 +182,13 @@ submitTodoBtn.addEventListener("click", (e)=> {
     }
     todoForm.style.display = "none";
     renderTodos();
+
+    todoTitle.value = "";
+    todoDescription.value = "";
+    todoDueDate.value = "";
+    prioritySelect.value = "low";
+
+    todoForm.style.display = "none";
 });
 
 });
