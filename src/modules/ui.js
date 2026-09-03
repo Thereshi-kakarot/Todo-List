@@ -53,7 +53,7 @@ const projectHTitle = document.querySelector(".project-h-title");
 
         state.selectedProject.todos.forEach((todo, index) => {
             todoList.innerHTML += `
-            <div class="todo">
+            <div class="todo ${todo.priority}">
             <h4>${todo.title}</h4>
             <p>${todo.description}</p>
             <p>Due: ${todo.dueDate}</p>
@@ -181,14 +181,15 @@ submitTodoBtn.addEventListener("click", (e)=> {
     state.selectedProject.addTodo(newTodo);
     }
     todoForm.style.display = "none";
-    renderTodos();
-
-    todoTitle.value = "";
+     todoTitle.value = "";
     todoDescription.value = "";
     todoDueDate.value = "";
     prioritySelect.value = "low";
 
     todoForm.style.display = "none";
+    renderTodos();
+
+   
 });
 
 });
