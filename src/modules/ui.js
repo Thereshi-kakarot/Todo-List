@@ -1,6 +1,7 @@
 import createProject from "./project.js";
 import { state } from "./state.js";
 import { createTodo } from "./todos.js";
+import { saveState, loadState } from "./localStorage.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 const addProjectBtn = document.getElementById("add-project");
